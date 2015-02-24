@@ -1,0 +1,87 @@
+\documentclass[11pt,titlepage]{book}
+\input{preamble}
+
+\begin{document}
+\frontmatter
+\subfile{title}
+\tableofcontents
+\chapter{Preface}
+    \subfile{foreword/preface}
+\mainmatter
+\chapter{Introduction to Computing}
+    \subfile{intro/intro}
+    \subfile{intro/arch}
+    \subfile{intro/binary}
+    \subfile{intro/octal}
+    \subfile{intro/hex}
+    \subfile{intro/exercise}
+\chapter{Variable and Type System}
+    \subfile{type/intro}
+    \subfile{type/variable}
+    \subfile{type/integer}
+    \subfile{type/float}
+    \subfile{type/character}
+    \subfile{type/logical}
+    \subfile{type/string}
+    \subfile{type/exercise}
+    \subfile{type/reference}
+\chapter{Introduction to the C$\sharp$ Programming Language}
+    \subfile{introcsharp/proglang}
+    \subfile{introcsharp/paradigm}
+    \subfile{introcsharp/consoleio}
+    \subfile{introcsharp/progstruct}
+    \subfile{introcsharp/convention}
+    \subfile{introcsharp/exercise}
+\chapter{Program Flow Control}
+    \subfile{flowctrl/intro}
+    \subfile{flowctrl/if}
+    \subfile{flowctrl/else}
+    \subfile{flowctrl/elseif}
+    \subfile{flowctrl/for}
+    \subfile{flowctrl/while}
+    \subfile{flowctrl/break}
+    \subfile{flowctrl/continue}
+    \subfile{flowctrl/reveng}
+    \subfile{flowctrl/divandconq}
+    \subfile{flowctrl/exercise}
+\chapter{Elementary Data Structure}
+    \subfile{data/intro}
+    \subfile{data/struct}
+    \subfile{data/enum}
+    \subfile{data/array}
+    \subfile{data/mularray}
+    \subfile{data/list}
+    \subfile{data/queue}
+    \subfile{data/stack}
+    \subfile{data/exercise}
+\chapter{Method}
+    \subfile{method/recursion}
+    \subfile{method/exercise}
+\chapter{Elementary Algorithm}
+    \subfile{algorithm/intro}
+    \subfile{algorithm/sorting}
+    \subfile{algorithm/searching}
+    \subfile{algorithm/exercise}
+\chapter{Introduction to Object-Oriented Programming}
+    \subfile{introoop/intro}
+    \subfile{introoop/class}
+    \subfile{introoop/member}
+    \subfile{introoop/inheritance}
+    \subfile{introoop/interface}
+    \subfile{introoop/polymorphism}
+    \subfile{introoop/exercise}
+\chapter{File I/O}
+    \subfile{fileio/stdio}
+    \subfile{fileio/file}
+        \subfile{fileio/readf}
+    \subfile{fileio/exception}
+    \subfile{fileio/exercise}
+\chapter{Introduction to Software Testing}
+    \subfile{testing/intro}
+    \subfile{testing/exercise}
+
+\backmatter
+\chapter{Appendix}
+    \subfile{appendix/install}
+    \subfile{appendix/reference}
+\end{document}

@@ -1,0 +1,88 @@
+\contentsline {chapter}{Preface}{vii}
+\contentsline {chapter}{\numberline {1}Introduction to Computing}{1}
+\contentsline {section}{\numberline {1.1}Chapter Introduction}{1}
+\contentsline {section}{\numberline {1.2}Basic Computer Architecture}{3}
+\contentsline {section}{\numberline {1.3}Binary Representation}{3}
+\contentsline {subsection}{\numberline {1.3.1}Primitive Type}{5}
+\contentsline {subsection}{\numberline {1.3.2}Reference Type}{5}
+\contentsline {section}{\numberline {1.4}Octal Representation}{5}
+\contentsline {section}{\numberline {1.5}Hexadecimal Representation}{5}
+\contentsline {section}{\numberline {1.6}Chapter Exercise}{5}
+\contentsline {chapter}{\numberline {2}Variable and Type System}{7}
+\contentsline {section}{\numberline {2.1}Introduction}{7}
+\contentsline {section}{\numberline {2.2}Variables}{7}
+\contentsline {subsection}{\numberline {2.2.1}Variable Declaration in C$\sharp $}{8}
+\contentsline {subsection}{\numberline {2.2.2}Variable Naming}{8}
+\contentsline {section}{\numberline {2.3}Integer}{8}
+\contentsline {section}{\numberline {2.4}Floating-point Number}{9}
+\contentsline {section}{\numberline {2.5}Character}{9}
+\contentsline {section}{\numberline {2.6}Logical Values}{9}
+\contentsline {section}{\numberline {2.7}String}{9}
+\contentsline {section}{\numberline {2.8}Exercise}{9}
+\contentsline {section}{\numberline {2.9}Reference and Further Reading}{10}
+\contentsline {chapter}{\numberline {3}Introduction to the C$\sharp $ Programming Language}{11}
+\contentsline {section}{\numberline {3.1}Programming Languages}{11}
+\contentsline {subsection}{\numberline {3.1.1}Your First C$\sharp $ Program}{11}
+\contentsline {section}{\numberline {3.2}Programming Paradigm}{12}
+\contentsline {section}{\numberline {3.3}Console I/O}{12}
+\contentsline {section}{\numberline {3.4}Program Structure: Basics}{13}
+\contentsline {section}{\numberline {3.5}Programming Convention}{15}
+\contentsline {section}{\numberline {3.6}Chapter Exercise}{15}
+\contentsline {chapter}{\numberline {4}Program Flow Control}{17}
+\contentsline {section}{\numberline {4.1}Chapter Introduction}{17}
+\contentsline {section}{\numberline {4.2}If Statement}{17}
+\contentsline {section}{\numberline {4.3}Else Statement}{18}
+\contentsline {section}{\numberline {4.4}Else-if Statement}{18}
+\contentsline {section}{\numberline {4.5}For Loop}{18}
+\contentsline {section}{\numberline {4.6}While Loop}{18}
+\contentsline {section}{\numberline {4.7}Break Statement}{18}
+\contentsline {section}{\numberline {4.8}Continue Statement}{18}
+\contentsline {section}{\numberline {4.9}Program Construction: Reverse Engineering}{18}
+\contentsline {section}{\numberline {4.10}Program Construction: Divide and Conquer}{23}
+\contentsline {section}{\numberline {4.11}Chapter Exercise}{23}
+\contentsline {chapter}{\numberline {5}Elementary Data Structure}{25}
+\contentsline {section}{\numberline {5.1}Introduction}{25}
+\contentsline {section}{\numberline {5.2}Structure}{25}
+\contentsline {section}{\numberline {5.3}Enumeration}{26}
+\contentsline {section}{\numberline {5.4}Array}{26}
+\contentsline {section}{\numberline {5.5}Multidimensional Array}{26}
+\contentsline {section}{\numberline {5.6}List}{26}
+\contentsline {section}{\numberline {5.7}Queue}{26}
+\contentsline {section}{\numberline {5.8}Stack}{27}
+\contentsline {section}{\numberline {5.9}Exercise}{27}
+\contentsline {chapter}{\numberline {6}Method}{29}
+\contentsline {section}{\numberline {6.1}Recursion}{29}
+\contentsline {subsection}{\numberline {6.1.1}Stack Overflow}{29}
+\contentsline {section}{\numberline {6.2}Chapter Exercise}{29}
+\contentsline {chapter}{\numberline {7}Elementary Algorithm}{31}
+\contentsline {section}{\numberline {7.1}Introduction}{31}
+\contentsline {section}{\numberline {7.2}Sorting}{32}
+\contentsline {section}{\numberline {7.3}Searching}{32}
+\contentsline {section}{\numberline {7.4}Chapter Exercise}{32}
+\contentsline {chapter}{\numberline {8}Introduction to Object-Oriented Programming}{33}
+\contentsline {section}{\numberline {8.1}Introduction}{33}
+\contentsline {section}{\numberline {8.2}Class}{33}
+\contentsline {subsection}{\numberline {8.2.1}Abstraction}{34}
+\contentsline {section}{\numberline {8.3}Class Member}{34}
+\contentsline {section}{\numberline {8.4}Inheritance}{34}
+\contentsline {section}{\numberline {8.5}Interface}{34}
+\contentsline {section}{\numberline {8.6}Polymorphism}{34}
+\contentsline {section}{\numberline {8.7}Chapter Exercise}{34}
+\contentsline {chapter}{\numberline {9}File I/O}{35}
+\contentsline {section}{\numberline {9.1}Standard I/O}{35}
+\contentsline {section}{\numberline {9.2}File}{35}
+\contentsline {subsection}{\numberline {9.2.1}Definition of File}{35}
+\contentsline {subsection}{\numberline {9.2.2}Read a File}{36}
+\contentsline {subsection}{\numberline {9.2.3}Absolute Path and Relative Path}{36}
+\contentsline {subsection}{\numberline {9.2.4}File Reading Algorithm}{37}
+\contentsline {section}{\numberline {9.3}Exception}{38}
+\contentsline {subsection}{\numberline {9.3.1}What is an Exception}{38}
+\contentsline {section}{\numberline {9.4}Chapter Exercise}{38}
+\contentsline {chapter}{\numberline {10}Introduction to Software Testing}{39}
+\contentsline {section}{\numberline {10.1}Introduction}{39}
+\contentsline {section}{\numberline {10.2}Chapter Exercise}{39}
+\contentsline {chapter}{Appendix}{41}
+\contentsline {chapter}{Intall C\# Environment}{43}
+\contentsline {section}{\numberline {10.3}Windows}{43}
+\contentsline {section}{\numberline {10.4}OS X}{43}
+\contentsline {section}{\numberline {10.5}Linux}{43}

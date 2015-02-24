@@ -1,0 +1,49 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{Structure}
+
+Struct, as known as structure, is a composition of data. For example, all
+laptops have brand and price. If we have 5 kinds of laptop, then we would need
+to have 5 string variables from their names and 5 integer variables for their
+prices. This can be difficult to manage. However, with struct, we can easily
+represent such data relationship in a program.
+
+In C$\sharp$, a struct is declared like this:
+
+\begin{minted}{csharp}
+    public struct Laptop
+    {
+        public string brand;
+        public int price;
+    }
+\end{minted}
+
+A struct declaration usually contains these statements:
+
+\begin{minted}{csharp}
+    public struct <identifier>
+    {
+        public <type> <member identifier>;
+        public <type> <member identifier>;
+        ...
+    }
+\end{minted}
+
+If we have a laptop of which brand is ``Boat'' and price is 500, we can use the
+structure above to represent such laptop like this:
+
+\begin{minted}{csharp}
+    Laptop boat; // declare this variable
+    boat.brand = "Boat"; // Initialize its brand
+    boat.price = 500; // Initialize its price
+\end{minted}
+
+As you can tell, if you want to access the member of a structure, just use the
+dot operator (``.'') after the variable identifier, and followed by the variable
+identifier of the field. For example:
+
+\begin{minted}{csharp}
+    Console.WriteLine (boat.brand + ": " + boat.price);
+\end{minted}
+
+\end{document}

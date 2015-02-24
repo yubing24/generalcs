@@ -1,0 +1,49 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{Programming Languages}
+Though we have designed and implemented thousands of programming languages,
+there is no such thing called ``perfect programming language'' yet. This is
+because all programming languages are designed to achieve a certain goal or
+address a solution to a particular issue. Therefore, all programming languages
+have its strength and weakness. If you are going to major in computer science or
+be a professional programmer, it is very likely that you will master 5 or 6
+programming languages in order to perform your work. By that time, you will
+learn what language is suitable for performing what kind of tasks.
+
+This book uses a rather popular programming language: C\#. C\# is designed and
+mainly implemented by Microsoft Corp. In a long time of its life, it is
+considered as a improved version of Java, which is a programming language that
+appeared before C$\sharp$.
+
+Extra Topic: The History of Java
+Java is a programming language designed and implemented by James Gosling and his
+colleagues when they were working for Sun Microsystem Co. in 1995. Unlike many
+other programming languages at that time, Java was designed to run on multiple
+platforms. Today, Java applications almost run on every device you use: your
+laptop PC, your Android smartphone, the Web, etc..
+
+How to Write a C$\sharp$ Program
+Everything must follow a set of rule in order to work correctly, especially
+computer programs. In fact, programs are so sensitive that even a tiny little
+errors can cause huge problems. When you write your programs from this book,
+you must copy exactly the words, character to your texteditor and
+
+
+\subsection{Your First C$\sharp$ Program}
+Let's get started by writing a simple C$\sharp$ program: print out some text on
+your screen. Suppose we want to print out ``Hello, world!'' on your screen, and
+the corresponding program will be like this:
+
+\begin{minted}{csharp}
+using System;
+public class Program
+{
+    public static void Main (string [] args)
+    {
+        Console.WriteLine("Hello, world!");
+    }
+}
+\end{minted}
+
+
+\end{document}

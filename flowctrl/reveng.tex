@@ -1,0 +1,205 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+    \section{Program Construction: Reverse Engineering}
+    It is not unusual that newcomer programmers sometimes do not know how to
+    start writing a particular program. This section will show one of the basic
+    way of solving a programming program: reverse engeineering.
+
+    Example: You are required to write a program that reads two integers from
+    user, calculate the quotient and remainders of them, and print it out in a
+    certain format. The required programming langauge is C$\sharp$.
+
+    Let's take a look at these requirements and imagine what it should look like
+    if we have had this program (bold letters are user inputs):
+
+    \begin{minted}{csharp}
+        Enter numerator: <b>25</b>
+        Enter denominator: <b>4</b>
+        25 / 4 = 6 with 1
+    \end{minted}
+
+As you can tell, this program should be able to print out some prompts, read
+two integers, and print out the results of calculation.
+
+Let's see how to use reverse engineering to solve this problem:
+
+Firstly, this program prints out some prompts, which means `Console.Write()`
+must have been used in this program.
+
+Secondly, this program reads some inputs and interprets them as integers, thus
+\texttt{Console.Read()} and \texttt{int.Parse()} must have been used.
+
+Thirdly, if we run this program multiple times, the results of calculation is
+in the same format all the time, thus formated string must have been used.
+
+After the analysis above, we are sure that following C$\sharp$ methods should be
+used in this program:
+\begin{itemize}
+    \item \texttt{Console.Write()} and \texttt{Console.WriteLine()}
+    \item \texttt{Console.ReadLine()} and \texttt{int.Parse()}
+    \item \texttt{string.Format()}
+\end{itemize}
+
+Besides of these, since \texttt{Console.Read()} will return the input from user, and
+quotient calculation needs integer variables, thus there must be some string and
+integer variables storing these values.
+
+Therefore, we need variables like these:
+\begin{itemize}
+    \item \texttt{string input}
+    \item \texttt{int numerator}
+    \item \texttt{int denominator}
+    \item \texttt{int quotient}
+    \item \texttt{int remainder}
+    \item \texttt{string output}
+\end{itemize}
+
+With these specified, we can start writing our programs:
+
+Step 1: Write down code skeleton:
+
+\begin{minted}{csharp}
+    public class MyProgram
+    {
+        public static void Main (string [] args)
+        {
+        }
+    }
+\end{minted}
+
+Step 2: Declare and initialize variables:
+
+\begin{minted}{csharp}
+    public class MyProgram
+    {
+        public static void Main (string [] args)
+        {
+            string input = "";
+            string output = "";
+            int numerator = 0;
+            int denominator = 0;
+            int quotient = 0;
+            int remainder = 0;
+        }
+    }
+\end{minted}
+
+Step 3: Write code that prints the output information (prompts and format strings):
+
+\begin{minted}{csharp}
+    public class MyProgram
+    {
+        public static void Main (string [] args)
+        {
+            string input = "";
+            string output = "";
+            int numerator = 0;
+            int denominator = 0;
+            int quotient = 0;
+            int remainder = 0;
+
+            Console.Write ("Enter numerator: ");
+
+            Console.Write ("Enter denominator: ");
+
+            Console.Write (output);
+        }
+    }
+\end{minted}
+
+Step 4: Write code that reads input from users and convert input string into integers:
+
+\begin{minted}{csharp}
+    public class MyProgram
+    {
+        public static void Main (string [] args)
+        {
+            string input = "";
+            string output = "";
+            int numerator = 0;
+            int denominator = 0;
+            int quotient = 0;
+            int remainder = 0;
+
+            Console.Write ("Enter numerator: ");
+            input = Console.ReadLine ();
+            numerator = int.Parse(input)
+
+            Console.Write ("Enter denominator: ");
+            input = Console.ReadLine ();
+            denominator = int.Parse(input);
+
+            Console.Write (output);
+        }
+    }
+\end{minted}
+
+Step 5: Perform the calculation and assign the results to proper variables:
+
+\begin{minted}{csharp}
+    public class MyProgram
+    {
+        public static void Main (string [] args)
+        {
+            string input = "";
+            string output = "";
+            int numerator = 0;
+            int denominator = 0;
+            int quotient = 0;
+            int remainder = 0;
+
+            Console.Write ("Enter numerator: ");
+            input = Console.ReadLine ();
+            numerator = int.Parse(input)
+
+            Console.Write ("Enter denominator: ");
+            input = Console.ReadLine ();
+            denominator = int.Parse(input);
+
+            quotient = numerator / denominator;
+            remainder = numerator % denominator;
+
+            Console.Write (output);
+        }
+    }
+\end{minted}
+
+Step 6: Produce the format string before print it out:
+
+\begin{minted}{csharp}
+public class MyProgram
+{
+    public static void Main (string [] args)
+    {
+        string input = "";
+        string output = "";
+        int numerator = 0;
+        int denominator = 0;
+        int quotient = 0;
+        int remainder = 0;
+
+        Console.Write ("Enter numerator: ");
+        input = Console.ReadLine ();
+        numerator = int.Parse(input)
+
+        Console.Write ("Enter denominator: ");
+        input = Console.ReadLine ();
+        denominator = int.Parse(input);
+
+        quotient = numerator / denominator;
+        remainder = numerator % denominator;
+
+        output = string.Format ("{0} / {1} = {2} with {3}",
+                                numerator,
+                                denominator,
+                                quotient,
+                                remainder);
+
+        Console.Write (output);
+    }
+}
+\end{minted}
+
+Now your program is finished and ready to be compiled and run!
+
+\end{document}

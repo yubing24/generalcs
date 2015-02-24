@@ -1,0 +1,114 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+    \section{Binary Representation}
+    Type System
+Suppose you have 4 light bulbs are connected in this fashion. As you can imagine,
+you can turn all these light bulbs on or off, or turn on some of them while leave
+the others off. Each light bulb only has two states: on and off. We represent the
+``on'' state as 1 and ``off'' state as 0. Therefore, for 4 light bulbs, the
+combination of their states make a group of new states. Let's label them with
+alphabetic letters like this:
+\begin{itemize}
+    \item 0000 `A'
+    \item 0001 `B'
+    \item 0010 `C'
+    \item 0011 `D'
+    \item 0100 `E'
+    \item 0101 `F'
+    \item 0110 `G'
+    \item 0111 `H'
+    \item 1000 `I'
+    \item 1001 `J'
+    \item 1010 `K'
+    \item 1011 `L'
+    \item 1100 `M'
+    \item 1101 `N'
+    \item 1110 `O'
+    \item 1111 `P'
+\end{itemize}
+
+As you can tell, with only 4 light bulbs, you can make a combination of 16
+states, which is \(2^4\) states. If you don't like using them to represent letters,
+you can use them to represent numbers, such as:
+
+\begin{itemize}
+    \item 0000 0
+    \item 0001 1
+    \item 0010 2
+    \item 0011 3
+    \item 0100 4
+    \item 0101 5
+    \item 0110 6
+    \item 0111 7
+    \item 1000 8
+    \item 1001 9
+    \item 1010 A, which is 10
+    \item 1011 B, which is 11
+    \item 1100 C, which is 12
+    \item 1101 D, which is 13
+    \item 1110 E, which is 14
+    \item 1111 F, which is 15
+\end{itemize}
+
+Does it look familiar to you? If not, this is the hexadecimal representation of
+numbers.
+
+You can label these states to make them mean something. For example, one way to
+label them as alphabetic letters. In this case, we can label 16 English letters
+from A to P. If you have more light bultbs, say 5, which allows you to get \(2^5 = 32\)
+states. This is definitely enough for you to represent the entire alphabetic
+letters just by using on and off of those light bulbs. Yes, it will be a little
+bit tedious for you to translate the states of light bulbs into letters, but we
+can make a machine that do this translation for us.
+
+Imagine that if you have more lightbulbs, following the induction above, you can
+label \(2^64\) different states, which is more than \(1.8 * 10^19\)! This is a huge
+number! With 64 light bulbs, you can not only use them to represent alphabetical
+letters, but also many characters and letters in other languages, even a large
+range of numbers!
+
+The more light bulbs you have, the more information you can represent with these
+light bulbs. Each light bulb has only two states. In computer science, we call
+this ``binary'' representation of information, and each light bulb is a ``bit''.
+
+
+\subsection{Primitive Type}
+With so many values that a computer can represent, it is better to categorize
+them so that manipulate them can be easier and faster. There are many way that
+you can categorize them, but one way in particular that computer scientists use
+is called type system. Type system is basically categorizing all kinds of values
+into following categories:
+
+\begin{itemize}
+    \item Integer
+    \item Decimal-point number
+    \item Character
+    \item Logical values
+\end{itemize}
+
+Types in the list above are generally refered as \emph{primitive types}. They
+are ``primitive'' not because they are primitive, but because their variables
+directly contains them.
+
+
+\subsection{Reference Type}
+Besides of primitive type values, computer can also represent another type
+called \emph{reference type}. Reference is not a particular kind of type but a
+general name of a variety of types. They are called ``reference type'' because
+their memory location does no contain values it has, but a memory address that
+contains those values. In another word, when you open the box that stores a
+reference type value, you will get a little piece of paper telling you which
+box that the actual values are in. This may sounds a little bit weird to you at
+this stage, but you will understand why reference type is very important in
+programming when you understand some basic computer architecture and operating
+systems.
+
+A typical reference type in programming is string. A string is a sequence of
+characters. For example, ``This is a great day!'' is a string that contains 20
+characters. As you may guess, a string can contain arbitrary number of
+[characters][1]. Since the size of a string can change all the time, it is
+better to store it somewhere else instead of within a single box of memory space.
+
+[1]: Strictly speaking, the number of characters in a string is limited by the
+size of computer's avaiable memory.
+\end{document}

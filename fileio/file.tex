@@ -1,0 +1,50 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{File}
+\subsection{Definition of File}
+So far, all the data that our programs use reside in the memory of a computer,
+which means that once program exits, all the data that you had in your program
+will be lost. This is not desirable if you want to save the data for later use.
+File, as a mechanism of non-volatile storage, solves this problem. File can be
+considered as a sequence of bits or characters stored in a non-volatile media,
+such as magnetic disk or tape, optical disks (such as CD/DVD), and solid-state
+drives. Data stored in these kind of media are not volatile and data can be
+loaded to memory if a program decides to use them. However, since these storage
+media is usually slower than the speed of memory, reading and writing to these
+media can be very slow.
+
+The classical definition of a file is a stream of character. Such file is
+usually represented as text file in many operating system. You can imagine that
+a file is a long list of characters. For example, if you open your text editor
+on your computer, write ``Hello world!'' and save it as hello.txt, then it
+probably would look like this: (put an image here).
+
+Visiting a file is a complex process. When a program needs to visit a file, the
+operating system will first check and see if that program has enough privilege to
+access that file. Some files can be read and write only, while other files, such
+as system files, are only for reading by normal users and are editable for
+priviledged users (such as system administrator).
+
+Once the operating system confirms that program has enough privilege to access
+that file, the operating system returns the control of computer to that program.
+Program will open that file and do whatever it is allowed to do on that file.
+Program should, but does not have to, close that file once it is done with using
+that file. If the program forgets to close that file, the operating system will
+close the file for the program once it exits.
+
+The algorithm for a program to access a file should be like this:
+\begin{enumerate}
+    \item Obtain the file path and name
+    \item Check if that file exists
+    \item Try to open that file and read it..
+    \item Do whatever it is allowed or commanded to do on that file.
+    \item Close the file once work is done.
+\end{enumerate}
+
+However, if any other issue happens during the process above, the program usually
+crashes and exits. This is mostly because some exceptions happen while trying to
+access that file and that exception is not handled anywhere in that program. In
+the later section of this chapter, we will discuss how to handle exceptions in
+program.
+
+\end{document}

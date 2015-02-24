@@ -1,0 +1,76 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+    \section{Console I/O}
+Programs are written for human use, thus they must be able to communicate with
+while running. Such communication involves a mechanism called I/O (stands
+for ``input and output''). Programs generally use different form of I/O to
+communicate with the outside world. When you use your word processor to write
+paper for your history classes, your word processor give you a graphical user
+interface (GUI), and what you see on the screen, such as menu and the content
+you typed in are the ``output'' of the program. When you type your paper into
+the word processor, the word processor will receive inputs from your keyboard.
+
+However, there are other forms of I/O that does not have a graphical user
+interface but text-only interface. The only way that you can interact with these
+kind of programms in by typing commands and program will perform certain tasks
+according to your command. This is called command-line user interface (CLI). In
+this book, all programs that you are going to write are in CLI. Most CLI programs
+run in console (or terminal). If you are using Microsoft's Windows operating
+system, it will be run in a command line environment. If you are using Apple's
+Mac OS X or a distribution of Linux, it will be run in your terminal.
+
+Output: Print Text in Command Line
+The first thing we want to do is to print some messages on the screen. Let's
+make this program print out a sentence: ``No legacy is so rich as honesty'' from
+Willam Shakespeare.
+
+Based on our discussion before, every time you write your C$\sharp$ program, you
+should start from this template:
+
+\begin{minted}{csharp}
+    using System;
+    public class MyProgram
+    {
+        public static void Main (string [] args)
+        {
+        }
+    }
+\end{minted}
+
+Let's name this program as \texttt{ch03\_ex01.cs}.
+
+As you can tell, this program is not going to print out the sentence that we
+want, since we don't have any statements that tells the computer to print out
+things. In C$\sharp$, we use a \emph{method} called \texttt{Console.WriteLine()}
+to print out the information that we want.
+
+First of all, let's declare a string variable so that we can store the content
+somewhere in this program:
+
+\begin{minted}{csharp}
+    using System;
+    public class MyProgram
+    {
+        public static void Main (string [] args)
+        {
+            string sentence = "No legacy is so rich as honesty.";
+        }
+    }
+\end{minted}
+
+Now we use the function we mentioned: \texttt{Console.WriteLine()} to print out
+this message in console/terminal:
+
+\begin{minted}{csharp}
+    using System;
+    public class MyProgram
+    {
+        public static void Main (string [] args)
+        {
+            string sentence = "No legacy is so rich as honesty.";
+            Console.WriteLine (sentence);
+        }
+    }
+\end{minted}
+
+\end{document}

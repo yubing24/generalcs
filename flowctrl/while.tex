@@ -1,0 +1,33 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+    \section{While Loop}
+Sometimes we do not exactly know when to jump out of a loop, but we know that we
+should jump out a loop when certain condition(s) is satisfied.  In this case,
+using a for-loop will be a little bit clumpsy and infleximble. For example, Bob
+and Jim want to play basketball after school, but Jim wants to finish his
+homework before that. Therefore, for Bob, the waiting process will be like this:
+
+while (Jim is doing home work)
+    wait for 5 more minutes
+
+This will make Bob keep waiting for Jim until Jim finishes his homework, and Bob
+does not need to know how long it will take Jim to finish.
+
+On contrast, if we use a for-loop, things will be a little bit different:
+
+start = 4'o clock
+end = 5'o clock
+for (time between start and end):
+    wait
+
+This will make Bob waiting for one hour for sure, but what if Jim cannot finish
+his homework in an hour, or what if Jim finishes his homework in 30 minutes? In
+the former case, should Bob force Jim to play basketball with him regardless of
+the unfinished homework? In the later case, should Bob keep wait until that hour
+
+Usually, there are two kinds of while loop in C-family programming languages:
+1. while loop
+2. do-while loop
+
+They work in a very similar way, except they check conditions at different checkpoints.
+\end{document}

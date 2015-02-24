@@ -1,0 +1,88 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\subsection{Read a File}
+Since file is nothing but a sequence of character or bits, thus it make sense to
+read them sequentially: from the first character/bit all the way until the last
+character, which is EOF (End of File) in Unix system.
+
+Before we can read a file, we must specify which file we want to read and where
+it is located. You usually need a to specify a path to that file, and the
+operating system will guide your program and show where that file is.
+
+In C$\sharp$, to read a file, you need to specify the path to that file.
+
+\subsection{Absolute Path and Relative Path}
+There are two ways to specify the path of a file in a system: absolute path and
+relative path. They are named ``absolute'' and ``relative'' is because the location
+of a particular file can be different based on the ``reference frame'' that we
+specify. An absolute path is the path that is from the root directory to
+that file, and a relative path is the path that is from current working directory
+to that file. For example, in a typical Unix operating system, our target file is
+under Documents/ directory and is named as `myfile.txt'. The absolute file path
+would be like this: `/home/user/Documents/myfile.txt'.
+
+Suppose our current working directory is under the Desktop/ directory, and we want
+to use the file myfile.txt using relative path, we would use: `../Documents/myfile.txt'.
+
+The major difference between an absolute file path and a relative one is that:
+the absolute file path is never change, while the relative path changes according
+to the path of current working directory.
+
+\subsection{File Reading Algorithm}
+A typical file reading algorithm is like this:
+    \begin{enumerate}
+        \item Get the path to target file.
+        \item Check if file exists.
+            \begin {itemize}
+                \item If yes, proceed to next step.
+                \item If no, create that file or handle exception.
+            \end {itemize}
+        \item Check if program has permission to access that file.
+            \begin {itemize}
+                \item If yes, proceed to next step.
+                \item If no, ask for permission or handle exception.
+            \end{itemize}
+        \item Use the given path to create a file object (Java or C$\sharp$) or
+        create a file descriptor (C/C++)
+        \item Perform whatever actions that are required by the program on that file.
+        (NOTE: exceptions may happen here as well!)
+        \item Close the file.
+    \end{enumerate}
+
+    Let's write a simple C$\sharp$ program that opens and print out the content of a
+    text file. Suppose you have a file named students.txt that contains the name of
+    students in a class. We can simply write a program like this:
+
+    \begin{minted}{csharp}
+        using System;
+        using System.IO;
+
+        public class ReadFile
+        {
+            public static void Main(string [] args)
+            {
+                    string path = "students.txt";
+                    StreamReader sr = new StreamReader(path);
+                    string line = sr.ReadLine();
+                    while (line != null) {
+                        Console.WriteLine(line);
+                        line = sr.ReadLine();
+                    }
+                    sr.Close();
+            }
+        }
+    \end{minted}
+
+    You may noticed quite a few flaws of the program above:
+    \begin{enumerate}
+        \item It can only read the file whose name is ``students.txt'', and this
+        file must be in the same directory as the executable program. If either
+        of those conditions fail, the program will not run at all.
+        \item It does not check if file exists or not. If file does not exist, this
+        program is very likely to crash.
+    \end{enumerate}
+
+    In order to handle the issues listed above, we need to improve the robustness
+    of our program. An intuitive solution would be like this:
+    
+\end{document}
