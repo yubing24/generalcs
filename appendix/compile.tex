@@ -1,0 +1,23 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\chapter{Compile \csharp Program}
+
+\subsection{Ubuntu Linux}
+For users whose primary operating system is Ubuntu Linux, the default \csharp
+compiler is the one implemented by Mono. To invoke this compiler and compile
+your program, simply type:
+
+\texttt{\$ mcs program.cs}
+
+This will generate an executable file named \texttt{program.exe}. You can run
+this program by typing:
+
+\texttt{\$ ./program.exe}
+
+If this does not execute the program, then you have two ways to do:
+\begin{enumerate}
+    \item Change the file to executable by using the \texttt{chmod +x} shell script.
+    \item Using Mono runtime environment to run this program: \texttt{mono program.exe}.
+\end{enumerate}
+Either way would work.
+\end{document}

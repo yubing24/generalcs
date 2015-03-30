@@ -1,35 +1,53 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-    \section{If Statement}
-Sometimes program needs to make a decision, just like human beings. For example,
-you want to figure out if a movie is old. You probably want your program work
-like this:
+\section{If Statement}
+Sometime we only want to execute parts of our program under certain conditions.
+For example, we want to read a number from user input, and we want to print it
+out if it is an even number and do nothing if the input is an odd number. Therefore,
+we would want the print statement to execute only when the input number is even.
+Therefore, we would need some mechanism in our program such that the program can
+test if certain condition is met. This mechanism is the \emph{if-statement}.
 
-
-read movie data
-    if (produced before 1950):
-        print (``It's an old movie!'')
-
-
-Many programming languages offer a statement that allows program to choose an
-execution path based on a condition. This is the if statement.
-
-In C\#, an if statement code block looks like this:
-
-\lstset{language=Java}
-\begin{lstlisting}
+In C$\sharp$, an if-statement code block looks like this:
+\begin{minted}{csharp}
     if (<condition>)
     {
         <statement #1>;
         <statement #2>;
         ...
     }
-\end{lstlisting}
-\lstset{language=Pascal}
+\end{minted}
+
+Evaluating the expression \texttt{<condition>} should return a Boolean value:
+\texttt{true} or \texttt{false}. If the returned value is \texttt{true}, statements
+inside the if-statement code block, such as \texttt{<statement \#1>} and
+\texttt{<statement \#2>}, will be executed. For the example mentioned at the
+beginning of this section, the if-statement code block should be like this:
+\begin{minted}{csharp}
+    int input = int.Parse (Console.ReadLine());
+    if (input % 2 == 0)
+    {
+        Console.WriteLine ("It is an even number!");
+    }
+\end{minted}
+
+\begin{minted}{csharp}
+    start
+    read movie data
+    if (movie produced before 1950):
+        then print ("It's an old movie!:)
+    end
+\end{minted}
+
+Many programming languages offer a statement that allows program to choose an
+execution path based on a condition. This is the if statement.
+
+% Add a execution path flowchart for an if statment
 
 
 
 
-The `\textless condition \textgreater' expression should always evaluate to a
+
+The `\textless condition\textgreater' expression should always evaluate to a
 boolean value: true or false.
 \end{document}

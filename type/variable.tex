@@ -62,6 +62,63 @@ Compare the following pairs of naming:
     \item A double variable for balance of savings account: savingBalance and b1
 \end{itemize}
 By comparing the naming choices above, you probably have noticed that good
-naming choice for variables can be very helpful in programming. 
+naming choice for variables can be very helpful in programming.
+
+\subsection{Primitive Type and Reference Type}
+Besides that values have all kinds of types, the storage of those values has
+type as well. There are two commonly used storage type in today's programming
+language: primitive type and reference type.
+
+A primitive type (or variable type) is type of storage that the value of the
+variable is directly stored at where it is allocated. Imagine that you have a
+group of boxes, items are stored right instead of these boxes. For example, if
+we write a program like this:
+
+\begin{minted}{csharp}
+    using System;
+    public class Program
+    {
+        public static void Main (string [] args)
+        {
+            double price = 14.99;
+            int unit = 5;
+            float taxRate = 0.01f;
+            double sum = price * unit * (1 + taxRate);
+            Console.WriteLine ("Unit price: " + price);
+            Console.WriteLine ("Purchases: " + unit);
+            Console.WriteLine ("Tax Rate: " + taxRate);
+            Console.WriteLine ("Total Cost: " + sum);
+        }
+    }
+\end{minted}
+
+In this case, variable \texttt{price}, \texttt{unit}, \texttt{taxRate}, \texttt{sum}
+are primitive type and the value are stored in the memory box that they reside
+in. If we draw a memory diagram of those variables that we declared, it would
+look like this:
+
+\includegraphics[scale = 0.5]{type/img/mmap-primitive.pdf}
+
+In this case, 
+
+Reference type (also called as \emph{pointer type}) is a little bit different.
+Inside of directly putting items inside the box, reference type will put the
+address of the item inside the box. When you need that value, you open the box
+first, and notice that there is only the address of values that you want. Then
+you follow the address and find the value.
+
+Why do we need both of them? Think about this way: each memory address has
+limited capacity for storing values. However, sometimes there are values that
+are so huge that would take many many addresses of spaces to store. In this case,
+it would be unrealistic to squeeze all those values in one little address. We
+need to split them and use a pointer to find out the first item of those values.
+Based on the type of that pointer, we can also easily find the other values
+of the variable.
+
+Another advantage of using reference type is that using reference type can save
+time on memory reallocation. If you have a chunk of data of 3 gigabyte in memory,
+it would be time wasting to move this much data around the memory avery time we
+use it. However, with reference type, we can simply use a different reference to
+achive the `movement' of data.
 
 \end{document}

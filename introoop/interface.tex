@@ -1,4 +1,144 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 \section{Interface}
+In many cases, instances of different classes have similar behaviour, and this
+is quite common in programming and real world. In real world, both human beings
+and parrots can ``talk'', but the way they talk are quite different: human
+beings actually commit meaningful talks while a parrot simply imitate what we
+teach him. However, since they both can ``talk'' in some way, it would be easier
+to treat them as a `Talkable' type.
+
+In programming, one way we can do is to define a `Talkable' class, and if we
+have `Human' and `Parrot' classes, we can make both of them inherit methods and
+members of the `Talkable' classes. But this can be very difficult to be clear to
+manage. For example: \emph{add example here!}
+
+To solve the problem of inheriting from multiple classes, we invented the idea
+of \emph{interface}. An interface is a collection of method signatures that
+specify what methods must be implemented if this interface is going to be used
+by a class. Once a class implements all the required methods of this interface,
+instances of this class can also be considered as `instances' of this interface,
+and thus we achieve the goal of multiple inheritance.
+
+\framebox[1.2\width]{Programming Languages that Support Mutiple Inheritance}
+
+\subsection{Declaration of Interfaces}
+To declare interface in \csharp:
+
+\begin{minted}{csharp}
+    public interface <NameOfInterface>
+    {
+        // put method signatures here. Do not implement any of them!
+        // Example:
+        // public void MethodA ();
+        // public int MethodB ();
+    }
+\end{minted}
+
+For our example mentioned at the beginning of this section, a \texttt{Talkable}
+interface can be declared like this:
+\begin{minted}{csharp}
+    public interface Talkable
+    {
+        public void Speak (String content);
+    }
+\end{minted}
+
+\subsection{Using Interface}
+As you can tell, this interface only contains a method signature:
+\texttt{public void Speak (String content)}, but not define it at all! Yes, the
+implementation is left to individual class that is going to use this interface.
+For the example that we mentioned at the beginning of this section, we can make
+our two classes: \texttt{Human} and \texttt{Parrot} implement this interface:
+
+For \texttt{Human} class:
+
+\begin{minted}{csharp}
+    using System;
+
+    public class Human : Talkable
+    {
+        private String name;
+
+        public Human (String name)
+        {
+            this.name = name;
+        }
+
+        public void Speak (String content)
+        {
+            Console.WriteLine (this.name + ": " + content);
+        }
+}
+\end{minted}
+
+For \texttt{Parrot} class, we would implement it slightly different so that it
+reflects the
+property of a parrot:
+
+\begin{minted}{csharp}
+    using System;
+
+    public class Parrot : Talkable
+    {
+        private String name;
+
+        public Parrot (String name)
+        {
+            this.name = name;
+        }
+
+        public void Speak (String content)
+        {
+            Console.WriteLine ("Hi, I am " + this.name + "!");
+            Console.WriteLine ("Hi, I am " + this.name + "!");
+            Console.WriteLine ("Hi, I am " + this.name + "!");
+        }
+    }
+\end{minted}
+
+Then, in the main program, we can instantiate a human and a parrot, and make
+them talk:
+
+\begin{minted}{csharp}
+    using System;
+    public class Program
+    {
+        public static void Main (String [] args)
+        {
+            Talkable peter = new Human ("Peter");
+            Talkable bob = new Parrot ("Bob");
+
+            peter.Speak ("Today's lecture is about the life of Caesar...");
+            bob.Speak ("I want to say something different!");
+        }
+    }
+\end{minted}
+
+\subsection{Benefits and Challenges of Using Interface}
+The most obvious benefit of using interface instead of multi-inheritance is that
+interfaces can be easier to manage than multi-inheritance could. However, there
+are some issues with using interfaces as well. For example, what if we have two
+interfaces like these and how should we implement them?
+
+\begin{minted}{csharp}
+    public interface MyInterfaceA
+    {
+        public void Foo ();
+    }
+\end{minted}
+
+and
+
+\begin{minted}{csharp}
+    public interface MyInterfaceB
+    {
+        public void Foo ();
+    }
+\end{minted}
+
+If we have a class that wants to implement both interfaces, how do we know which
+\texttt{Foo ()} method that we are implementing? Even if we can tell that, when
+we instantiate the class and invoke a \texttt{Foo ()} method of that instance,
+which interface does that \texttt{Foo ()} belongs to?
 \end{document}

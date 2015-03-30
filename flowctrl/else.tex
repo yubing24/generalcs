@@ -1,4 +1,29 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
     \section{Else Statement}
+    An \texttt{else} statement is usually equivalent to `otherwise' in English.
+    For example:
+    \begin{minted}{csharp}
+        using System;
+
+        public class Program
+        {
+            public static void Main (String [] args)
+            {
+                Console.Write ("Enter a number: ");
+                String input = Console.ReadLine ();
+                int val = int.Parse (input);
+
+                if (val > 0)
+                {
+                    Console.WriteLine (val + " is a positive number!");
+                }
+                else
+                {
+                    Console.WriteLine (val + " is not a positive number!");
+                }
+
+            }
+        }
+    \end{minted}
 \end{document}

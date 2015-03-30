@@ -1,0 +1,22 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+    \section{Summary}
+    We introduce the basic I/O mechanism in the \csharp programming language.
+    To print out message in terminal, use methods:
+    \begin{itemize}
+        \item \texttt{Console.WriteLine (string value)}
+        \item \texttt{Console.Write (string value)}
+    \end{itemize}
+
+    \par To read input from user, use methods:
+    \begin{itemize}
+        \item \texttt{Console.ReadLine ()}
+        \item \texttt{Console.Read ()}
+    \end{itemize}
+    Reading inputs means that new values are added into program while program is
+    running, thus it is important to remember saving the input to a \texttt{string}
+    variable:
+    \begin{minted}{csharp}
+        string inputmsg = Console.ReadLine ();
+    \end{minted}
+\end{document}

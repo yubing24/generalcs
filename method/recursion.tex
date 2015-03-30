@@ -5,4 +5,64 @@
     \subsection{Stack Overflow}
     You probably have heard of this. There is a famous programming Q\& A website
     called StackOverflow, but what actually it is?
+
+    Let's take a look at the following code. Do you think it can be compiled?
+    If yes, what do you think it will happen when you run it? Try write down
+    this code and run it on your computer:
+
+    \begin{minted}{csharp}
+    using System;
+
+    public class Program
+    {
+        public static void Main (string [] args)
+        {
+            MethodA();
+        }
+
+        public static void MethodA ()
+        {
+            Console.WriteLine ("Method A is being called!");
+            MethodB();
+        }
+
+        public static void MethodB ()
+        {
+            Console.WriteLine ("Method B is being called!");
+            MethodA();
+        }
+    }
+    \end{minted}
+
+    Yes, it will be compiled. The \csharp compiler will not complain anything.
+    However, when you run it, something weird happens: it seems like the program
+    is just printing \texttt{Method A is being called!} and
+    \texttt{Method B is being called!} infintely, but if you wait for a while,
+    it start printing something like \texttt{at Program.MethodA () <0x0001b>}
+    and \texttt{at Program.MethodB () <0x0001b>} infintely. Finally, if you wait
+    long enough, the last two lines printed out are something like this:
+    \texttt{at Program.Main (string[]) <0x0000b>} and
+    \texttt{at (wrapper runtime-invoke) <Module>.runtime\_invoke\_void\_object (object,intptr,intptr,intptr) <0xffffffff>}.
+
+    We won't explain what they mean here: you will learn their meanings when you
+    take a course in computer architecture and operating system. But we will
+    explain what it tells you.
+
+    When your program is running, there is a chunk of memory, called \emph{stack},
+    that is keep tracking of the method calls in your program. Everytime a method
+    is called, some data is added to the stack. In our example above, when program
+    starts, the \texttt{Main()} method is called, and some data is added to the
+    stack. Then the program execute method \texttt{MethodA()}, thus some more
+    data is added to stack. Since \texttt{MethodB()} is called in \texttt{MethodA()},
+    more data is added to stack. Then you will notice: \texttt{MethodB()} will call
+    \texttt{MethodA()}, and in turn \texttt{MethodA()} will call \texttt{MethodB()}.
+    This will just keep adding a lot of data to the stack.
+
+    However, the size of the stack is limited: it can only contain certain amount
+    of data. When there is too much data on the stack, the stack will overflow.
+    When stack is overflown, it will remove all the data in it, print them out,
+    and terminat the program. This is called \emph{stack overflow}. In this case,
+    stack overflow is caused by recursion: recusively calling \texttt{MethodA()}
+    and \texttt{MethodB()}.
+
 \end{document}

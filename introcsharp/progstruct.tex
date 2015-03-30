@@ -6,54 +6,53 @@
     them to lower level code they can be run by your computer directly. For all
     these executable programs, they are all in this form:
 
-\begin{minted}{csharp}
+    \begin{minted}{csharp}
     public class <class identifier>
     {
         public static void Main (string [] args)
         {
         }
     }
-\end{minted}
+    \end{minted}
 
-If we have a program whose name is ``Shopping'', you should replace
-\texttt{<class identifier>} by the program name. This program should be written
-in this form:
+    If we have a program whose name is ``Shopping'', you should replace
+    \texttt{<class identifier>} by the program name. This program should be written
+    in this form:
 
-\begin{minted}{csharp}
+    \begin{minted}{csharp}
     public class Shopping
     {
         public static void Main (string [] args)
         {
         }
     }
-\end{minted}
+    \end{minted}
 
-A few things must be memorized:
-\begin{enumerate}
-    \item All program should start from \texttt{public class}, followed by a
-    pair of curly braces.
-    \item All executable programs have a \emph{method}called
-    \texttt{Main (string [] args)}. This method should also be
-    \texttt{public static void Main (string [] args)}.
-\end{enumerate}
+    A few things must be memorized:
+    \begin{enumerate}
+        \item All program should start from \texttt{public class}, followed by a
+        pair of curly braces.
+        \item All executable programs have a \emph{method}called
+        \texttt{Main (string [] args)}. This method should also be
+        \texttt{public static void Main (string [] args)}.
+    \end{enumerate}
 
+    When you write your program on a text editor, you should follow these steps:
 
-When you write your program on a text editor, you should follow these steps:
+    Step 1. Write down libraries and the class and its braces:
 
-Step 1. Write down libraries and the class and its braces:
-
-\begin{minted}{csharp}
+    \begin{minted}{csharp}
     using System;
     public class MyProgram
     {
     }
-\end{minted}
+    \end{minted}
 
-Step 2. Write the \texttt{Main (string [] args)} between the curly braces. Also,
-notice that \texttt{Main (string [] args)} has its own pair of curly braces,
-nested in the curly braces of the class.
+    Step 2. Write the \texttt{Main (string [] args)} between the curly braces. Also,
+    notice that \texttt{Main (string [] args)} has its own pair of curly braces,
+    nested in the curly braces of the class.
 
-\begin{minted}{csharp}
+    \begin{minted}{csharp}
     using System;
     public class MyProgram
     {
@@ -61,7 +60,8 @@ nested in the curly braces of the class.
         {
         }
     }
-\end{minted}
-This is the code skeleton that you are going to use for the first few chapters in this book.
+    \end{minted}
+    This is the code skeleton that you are going to use for the first few
+    chapters in this book.
 
 \end{document}

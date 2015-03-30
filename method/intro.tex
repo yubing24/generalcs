@@ -1,0 +1,46 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+    \section {Introduction}
+    Modern program consists of thousands even millions line of code. The Linux
+    operating system kernel consists of more than 10 millions line of code, and
+    most of the code are regular routines: things that needs to be done repetitively.
+    \emph{Method (or function in other programming langauges)} supplies one of
+    the most important ways that can reduce the complexity of code. When a series
+    of tasks need to be performed repetitively, it is better to write a method
+    that can handle this job, and everytime the program just need to invoke a
+    method when the routine work is needed.
+
+    The most common method that we have used so far in \csharp is the
+    \texttt{Main ()} method. The \texttt{Main ()} method is where a program starts
+    its execution. Let's take a look at the characteristics of the \texttt{Main ()}
+    method.
+
+    \subsection{The Main Method}
+    All of our programs so far are written like this:
+    \begin{minted}{csharp}
+    using System;
+    public class Program
+    {
+        public static void Main (string [] args)
+        {
+            ...
+        }
+    }
+    \end{minted}
+
+    As you can tell, there are quite a few things associated with the \texttt{Main()}
+    method. They are:
+    \begin{enumerate}
+        \item It is \texttt{public}
+        \item It is \texttt{static}
+        \item It has a \emph{type} \texttt{void}
+        \item It has an \emph{argument}, which is an array of \texttt{string}
+    \end{enumerate}
+
+    Therefore, we can infer that a method in \csharp should have the keywords
+    \texttt{public} and \texttt{static}. A method should have a \emph{type} as
+    well. Optionally, a method should have some \emph{argument{s}}, depending on
+    what the method needs to do.
+
+
+\end{document}

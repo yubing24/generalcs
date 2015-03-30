@@ -1,4 +1,31 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-    \section{Programming Convention}
+\section{Programming Convention}
+Like many other discipline such as mathematics, physics, and chemistry, computer
+science has her standards of notation and programming conventions. Keeping good
+and consistent programming style makes your code easier for your fellows to read
+and maintain, just a like a uniform standard notation in chemical elements makes
+the communication among chemists easier. Unlike other sciences that only has one
+single convention, there many programming conventions and styles for you to
+choose. \emph{However, it is very important that you pick one style and
+convention and stay with it as long as you can.} This section will introduce
+some fundamental conventions in programming and code writing.
+
+\subsection {The 80-Column Rule}
+\subsection {Indentation}
+Indentation helps you grouping your code into blocks so that you can easily tell
+which statements are executed together. There is a debate about the side of
+indentation: some organizations, like the Linux kernel development team, prefers
+8-character indentation, while some programming langauges, such as Scala, set
+the indentation as 2-character long. They both have their rationales. For
+C$\sharp$, I recommend to use either 4 or 8-character indentation.
+
+There is one thing that people commonly agree with: you should never have too
+many indentations in your code, and the Linux kernel development team even states
+that a program shall never have more than three levels of indentation. The reason
+behind this is: high level indentation usually comes from nested conditional
+statements, such as nested \texttt{if-else}, \texttt{for} loop, and
+\texttt{while} loop, and such nested logical control can be greatly simplified
+by using some external parameters or functions. 
+
 \end{document}
